@@ -77,16 +77,16 @@ int main()
     if (fin) { fin >> bestScore; }
     fin.close();
 
-    auto prev = std::chrono::steady_clock::now();
+    auto previous = std::chrono::steady_clock::now();
 
     // main loop
     while (dead == 0)
     {
         // delta time
         auto now = std::chrono::steady_clock::now();
-        float dt = std::chrono::duration<float>(now - prev).count();
-        prev = now;
-        if (dt > 0.1f) dt = 0.1f; // clamp delta time
+        float deltaTime = std::chrono::duration<float>(now - previous).count();
+        previous = now;
+        if (deltaTime > 0.1f) deltaTime = 0.1f; 
 
         // read input events
         DWORD nEvents = 0;
@@ -118,10 +118,10 @@ int main()
             } // end if key event
         } // end for each event
 
-        birdVelocity = birdVelocity + 42.0f * dt;
-        birdYPosition = birdYPosition + birdVelocity * dt;
+        birdVelocity = birdVelocity + 42.0f * deltaTime;
+        birdYPosition = birdYPosition + birdVelocity * deltaTime;
 
-        time = time + dt;
+        time = time + deltaTime;
         if (time >= 1.4f)
         {
             time = time - 1.4f;
@@ -132,7 +132,7 @@ int main()
 
         for (int i = 0; i < (int)pipeXPositions.size(); i++) // loop over all pipes
         {
-            pipeXPositions[i] = pipeXPositions[i] - 18.0f * dt; // move pipe left
+            pipeXPositions[i] = pipeXPositions[i] - 18.0f * deltaTime; // move pipe left
 
             int pipeRight = (int)std::floor(pipeXPositions[i]) + 6 - 1;
             if (pipeScored[i] == 0 && pipeRight < 10)
