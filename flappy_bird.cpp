@@ -54,9 +54,6 @@ int main()
   INPUT_RECORD record;
   DWORD ne = 0;
 
-  // int debug = 1;
-  // if (debug) std::cout << "debug: game starting" << std::endl;
-
   // load best score
   std::ifstream fin("best-score.txt");
   if (fin)
