@@ -96,14 +96,14 @@ int main()
             return 1;
         }
 
-        for (DWORD i = 0; i < nEvents; ++i) // loop through events
+        for (DWORD i = 0; i < nEvents; ++i) 
         {
             if (!ReadConsoleInput(consoleInputHandle, &record, 1, &ne))
             {
                 std::cerr << "Failed to read console input." << std::endl;
                 SetConsoleMode(consoleInputHandle, mode);
                 return 1;
-            } // end if ReadConsoleInput
+            } 
 
             if (record.EventType == KEY_EVENT)
             {
