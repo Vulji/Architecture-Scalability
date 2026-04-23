@@ -59,9 +59,9 @@ int main()
   if (fin)
   {
     fin >> bestScore;
-    if (!fin) bestScore = 0; // reset if read failed
+    if (!fin) bestScore = 0; 
   }
-  fin.close(); // close the file
+  fin.close(); 
 
   auto prev = std::chrono::steady_clock::now();
 
