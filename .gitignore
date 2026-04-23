@@ -39,3 +39,6 @@
 .vs/slnx.sqlite
 .vs/VSWorkspaceState.json
 .idea/vcs.xml
+.idea/indexLayout.xml
+.idea/encodings.xml
+*.xml

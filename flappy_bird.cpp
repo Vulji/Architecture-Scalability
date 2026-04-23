@@ -251,4 +251,4 @@ int main()
   // restore original console mode
   SetConsoleMode(h, m);
   return 0;
-}
+}    
