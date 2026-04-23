@@ -1,0 +1,41 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+.vs/Architecture&Scalability/FileContentIndex/e7296ca6-d288-473d-87fb-2b255bf1355b.vsidx
+.vs/Architecture&Scalability/v17/.wsuo
+.vs/Architecture&Scalability/v17/Browse.VC.db
+.vs/Architecture&Scalability/v17/DocumentLayout.json
+.vs/Architecture&Scalability/v17/ipch/AutoPCH/3d0d3e7e0c31bc5f/FLAPPY-BIRD.ipch
+.vs/ProjectSettings.json
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+.idea/vcs.xml
