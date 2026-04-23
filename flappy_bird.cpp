@@ -13,12 +13,11 @@
 
 int main()
 {
-  HANDLE consoleInputHandle  = GetStdHandle(STD_INPUT_HANDLE);  // input
-  HANDLE consoleOutpuHandle = GetStdHandle(STD_OUTPUT_HANDLE); // output
+  HANDLE consoleInputHandle  = GetStdHandle(STD_INPUT_HANDLE);  
+  HANDLE consoleOutpuHandle = GetStdHandle(STD_OUTPUT_HANDLE); 
   if (consoleInputHandle == INVALID_HANDLE_VALUE)  { std::cerr << "error"  << std::endl; return 1; }
   if (consoleOutpuHandle == INVALID_HANDLE_VALUE) { std::cerr << "error" << std::endl; return 1; }
-
-  // use words for console io
+  
   DWORD mode  = 0;
   DWORD mode2 = 0;
   DWORD mode3 = 0;
@@ -30,27 +29,27 @@ int main()
   if (GetConsoleMode(consoleOutpuHandle, &mode3))  SetConsoleMode(consoleOutpuHandle, mode3 | ENABLE_VIRTUAL_TERMINAL_PROCESSING);
 
   // bird
-  float birdYPosition = 9.0f;         // y position (float)
-  float birdVelocity = 0.0f;         // velocity
-  int   birdTop = 0;            // top (int)
-  int   birdBottom = 0;            // bottom (int)
-  int   birdLeft = 10;           // left
-  int   birdRight = 10 + 2 - 1;  // right
-  int dead = 0;            // 0 = alive, 1 = dead
-  float time  = 0.0f;         // spawn timer
-  unsigned long long score  = 0; // current score
-  unsigned long long bestScore = 0; // best score
+  float birdYPosition = 9.0f;         
+  float birdVelocity = 0.0f;         
+  int   birdTop = 0;            
+  int   birdBottom = 0;            
+  int   birdLeft = 10;           
+  int   birdRight = 10 + 2 - 1;  
+  int dead = 0;            
+  float time  = 0.0f;         
+  unsigned long long score  = 0; 
+  unsigned long long bestScore = 0; 
   // hud padding
-  int leftPadding = 0; // left padding
-  int rightPadding = 0; // right padding
+  int leftPadding = 0; 
+  int rightPadding = 0; 
   // pipe data
-  std::vector<float> pipeXPositions; // x positions
-  std::vector<int>   pipeGaps; // gap tops
-  std::vector<int>   pipeScored; // scored flag (0 or 1)
+  std::vector<float> pipeXPositions; 
+  std::vector<int>   pipeGaps; 
+  std::vector<int>   pipeScored; 
 
   // rng
   std::mt19937 rng(std::random_device{}());
-  std::uniform_int_distribution<int> gapPosition(2, 20 - 6 - 2); // gap position
+  std::uniform_int_distribution<int> gapPosition(2, 20 - 6 - 2); 
 
   INPUT_RECORD record;
   DWORD ne = 0;

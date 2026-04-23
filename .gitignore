@@ -42,3 +42,11 @@
 .idea/indexLayout.xml
 .idea/encodings.xml
 *.xml
+flappy-bird/x64/Debug/vc143.pdb
+flappy-bird/x64/Debug/vc143.idb
+flappy-bird/x64/Debug/flappy-bird.tlog/link.read.1.tlog
+flappy-bird/x64/Debug/flappy-bird.ilk
+*.pdb
+*.idb
+*.tlog
+*.ilk
