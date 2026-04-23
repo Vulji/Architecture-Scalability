@@ -79,7 +79,6 @@ int main()
 
     auto previous = std::chrono::steady_clock::now();
 
-    // main loop
     while (dead == 0)
     {
         // delta time
@@ -130,9 +129,9 @@ int main()
             pipeScored.push_back(0);
         }
 
-        for (int i = 0; i < (int)pipeXPositions.size(); i++) // loop over all pipes
+        for (int i = 0; i < (int)pipeXPositions.size(); i++) 
         {
-            pipeXPositions[i] = pipeXPositions[i] - 18.0f * deltaTime; // move pipe left
+            pipeXPositions[i] = pipeXPositions[i] - 18.0f * deltaTime; 
 
             int pipeRight = (int)std::floor(pipeXPositions[i]) + 6 - 1;
             if (pipeScored[i] == 0 && pipeRight < 10)
@@ -156,8 +155,8 @@ int main()
         // collision
         birdTop = (int)std::floor(birdYPosition);
         birdBottom = birdTop + 2 - 1;
-        birdLeft = 10; // same every frame
-        birdRight = 10 + 2 - 1; // same every frame
+        birdLeft = 10; 
+        birdRight = 10 + 2 - 1; 
         // check wall 
         if (birdTop < 0 || birdBottom >= 20) { dead = 1; }
 
@@ -259,8 +258,8 @@ int main()
 
     // save best score to file
     std::ofstream fout("best-score.txt", std::ios::trunc);
-    if (fout) fout << bestScore; // write best score
-    fout.close(); // close the file
+    if (fout) fout << bestScore; 
+    fout.close(); 
 
     // restore original console mode
     SetConsoleMode(consoleInputHandle, mode);
