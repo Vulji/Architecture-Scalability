@@ -1,0 +1,12 @@
+Les problèmes que j'ai trouvé dans le format du code:
+-Nom de variable abrégés/non representatif
+-Grand nombre de if/else check embriqué
+-Pas de early return
+-Présence de magic numbers
+-Quasiment tout est fait dans main qui compte 240 lignes
+-Les commentaires répondent au comment pas au pourquoi
+-Utilisation des strings abusive
+-Boolean blindness
+-Commentaire ToDo inutile
+
+Résultat un code très peu lisible, avec une imbrication importante rendant les modifications et le debug difficiles.
